@@ -110,7 +110,9 @@ Make sure your S3 bucket has the appropriate Object Ownership settings:
 
 ## Screenshots
 <Br>
-![Gameimage](https://github.com/user-attachments/assets/4f889e30-4393-45e0-abcb-6d21415af0ac)
+
+![image](https://github.com/user-attachments/assets/53004496-2b6c-4a26-aa7c-b008c4271e7e)
+
 
 ## Future Enhancements
 
