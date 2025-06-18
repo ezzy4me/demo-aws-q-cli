@@ -67,16 +67,11 @@ You can deploy this game to AWS S3 static website hosting using the provided Clo
 1. Upload index.html and game.js to your S3 bucket
 2. Make sure the files are publicly accessible
 
-bash
-aws s3 cp index.html s3://your-bucket-name/ --acl public-read
-aws s3 cp game.js s3://your-bucket-name/ --acl public-read
-
-
 ### Step 3: Access your game
 
 Once deployed, your game will be available at:
 http://your-bucket-name.s3-website-<region>.amazonaws.com
-
+> You can find here! '[Static website hosting] - [Bucket website endpoint]'
 
 ## Implementation Details
 
