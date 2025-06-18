@@ -1,22 +1,23 @@
 # demo-aws-q-cli
 **_Deploy mini game to AWS S3 static website hosting using the provided CloudFormation template!_**
 
+> 🚀 **Notice:** This entire project was developed using the Amazon Q CLI, showcasing how efficiently you can build web applications with AI assistance directly in your terminal.
 A simple web-based Mario-style platformer game built with HTML and JavaScript. This game features a yellow square character that can jump on platforms, collect coins, and defeat enemies.
 
 ## Prerequisites
 
-• A modern web browser (Chrome, Firefox, Safari, Edge)
-• Basic knowledge of HTML and JavaScript (for development)
-• AWS account (for S3 deployment)
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Basic knowledge of HTML and JavaScript (for development)
+- AWS account (for S3 deployment)
 
 ## Game Features
 
-• Simple controls using arrow keys
-• Platform jumping mechanics
-• Coin collection
-• Enemy interaction
-• Score tracking
-• Game over and restart functionality
+- Simple controls using arrow keys
+- Platform jumping mechanics
+- Coin collection
+- Enemy interaction
+- Score tracking
+- Game over and restart functionality
 
 ## How to Play
 
@@ -30,11 +31,12 @@ A simple web-based Mario-style platformer game built with HTML and JavaScript. T
 
 ## Project Structure
 
-mario-game/
-├── index.html        # Game HTML structure and styling
-├── game.js           # Game logic and functionality
-└── s3-static-hosting.yaml  # CloudFormation template for S3 deployment
-
+<pre> <code> ``` 
+  mario-game/ 
+  ├── index.html # Game HTML structure and styling 
+  ├── game.js # Game logic and functionality 
+  └── s3-static-hosting.yaml # CloudFormation template for S3 deployment 
+  ``` </code> </pre>
 
 ## Local Development
 
@@ -78,22 +80,22 @@ http://your-bucket-name.s3-website-<region>.amazonaws.com
 
 ## Implementation Details
 
-• The game character is a simple yellow square (40px × 40px)
-• Platforms are brown with green tops
-• Coins are gold circles
-• Enemies move back and forth automatically
-• The game uses JavaScript intervals for animation and game loop
-• Collision detection is implemented for platforms, coins, and enemies
+- The game character is a simple yellow square (40px × 40px)
+- Platforms are brown with green tops
+- Coins are gold circles
+- Enemies move back and forth automatically
+- The game uses JavaScript intervals for animation and game loop
+- Collision detection is implemented for platforms, coins, and enemies
 
 ## Customization
 
 You can customize the game by modifying:
 
-• Character appearance in the createPlayerCharacter() function
-• Platform positions in the createPlatforms() function
-• Coin positions in the createCoins() function
-• Enemy behavior in the moveEnemies() function
-• Game physics by adjusting jump height and gravity values
+- Character appearance in the createPlayerCharacter() function
+- Platform positions in the createPlatforms() function
+- Coin positions in the createCoins() function
+- Enemy behavior in the moveEnemies() function
+- Game physics by adjusting jump height and gravity values
 
 ## Troubleshooting S3 Deployment
 
@@ -107,13 +109,13 @@ Make sure your S3 bucket has the appropriate Object Ownership settings:
 3. Set it to "ACLs enabled" and "Bucket owner preferred" or "Object writer"
 
 ## Screenshots
-
-(Screenshots would be included here)
+<Br>
+![Gameimage](https://github.com/user-attachments/assets/4f889e30-4393-45e0-abcb-6d21415af0ac)
 
 ## Future Enhancements
 
-• Add more levels
-• Implement power-ups
-• Add sound effects
-• Create a start screen
-• Add mobile touch controls
+- Add more levels
+- Implement power-ups
+- Add sound effects
+- Create a start screen
+- Add mobile touch controls
