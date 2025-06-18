@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template to deploy a static website on S3'
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Name of the S3 bucket to create (must be globally unique)
+    AllowedPattern: '^[a-z0-9][a-z0-9.-]*$'
+    ConstraintDescription: Bucket name can include numbers, lowercase letters, periods, and hyphens. It cannot start with a period or hyphen.
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: ObjectWriter
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: index.html
+      VersioningConfiguration:
+        Status: Enabled
+      Tags:
+        - Key: Purpose
+          Value: StaticWebsiteHosting
+        - Key: Application
+          Value: MarioGame
+
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3Bucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Join ['', ['arn:aws:s3:::', !Ref S3Bucket, '/*']]
+
+Outputs:
+  WebsiteURL:
+    Description: URL for the website hosted on S3
+    Value: !GetAtt S3Bucket.WebsiteURL
+  S3BucketSecureURL:
+    Description: S3 bucket secure URL
+    Value: !Join ['', ['https://', !GetAtt S3Bucket.DomainName]]
+  BucketName:
+    Description: Name of the S3 bucket
+    Value: !Ref S3Bucket
